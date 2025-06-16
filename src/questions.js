@@ -1,0 +1,58 @@
+export const questions = [ {
+    question: "When is Christmas",
+    option1: "25th",
+    option2: "3rd",
+    option3: "2nd",
+    option4: "31st",
+    ans: 1,
+},
+{
+    question: "Who is the president of Nigeria",
+    option1: "Yenegoa",
+    option2: "Buhari",
+    option3: "Goodluck",
+    option4: "Tinubu",
+    ans: 4,
+},
+{
+    question: "When did Nigeria gain independence",
+    option1: "1960",
+    option2: "2012",
+    option3: "2025",
+    option4: "1891",
+    ans: 1,
+},
+{
+    question: "How many continents are there in the world",
+    option1: "6",
+    option2: "5",
+    option3: "7",
+    option4: "11",
+    ans: 3,
+},
+{
+    question: "What is the full meaning of 'JS'",
+    option1: "John Stones",
+    option2: "Javascript",
+    option3: "Joystick",
+    option4: "Joan's Scarf",
+    ans: 2,
+},
+{
+    question: "What is the first day of the week?",
+    option1: "Sunday",
+    option2: "Tuesday",
+    option3: "Monday",
+    option4: "Saturday",
+    ans: 1,
+},
+{
+    question: "How many days are there in a week?",
+    option1: "5",
+    option2: "3",
+    option3: "9",
+    option4: "7",
+    ans: 4,
+}
+
+]
