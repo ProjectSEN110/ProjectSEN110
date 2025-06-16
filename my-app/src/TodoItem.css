@@ -1,4 +1,4 @@
-.todo-tem{
+.todo-item{
     display: flex;
     justify-content: space-between;
 }
@@ -7,7 +7,7 @@
     color: #Fff;
     padding: 0.5em;
     border: none;
-    margin: 2em;
+    margin: 1em;
     border-radius: 5px;
     cursor: pointer;
 }
