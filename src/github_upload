@@ -1,13 +1,6 @@
-From my GitHub Repo directly
-git clone https://github.com/my-username/my-repo.git
-git remote remove origin
-git remote add origin https://github.com/their-username/their-repo.git
-git push -u origin main
-
-Locally
 git init
 git add .
-git commit -m "Commmit"
-git remote add origin https://github.com/their-username/their-repo.git
-git branch -M main 
+git commit -m "first commit"
+git branch -M main
+
 git push -u origin main
