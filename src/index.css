@@ -1,0 +1,90 @@
+body{
+  background-color: #F5efeb;
+}
+
+.hero{
+  display: block;
+  
+}
+
+.header{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #2f4156;
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1{ 
+  float: left;
+  margin: 30px 0;
+  margin-right: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 1.5em;
+}
+
+.header nav{
+  margin: 20px 0;
+}
+
+.header nav ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.header nav ul li {
+  float: left
+}
+
+.header nav ul li a {
+  font-size: 15px;
+  display: block;
+  color:white ;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.header nav ul li a:hover {
+  background-color: #567C8D;
+}
+.header nav ul li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* -------------------------for News card------------------------- */
+
+.card {
+  width: 50%;
+  height: auto;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding: 20px;
+  margin-right: 100px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  align-self: center;
+}
+
+.card:hover{
+  box-shadow: 0px 8px 8px ;
+  cursor: pointer;
+}
+.card .card-img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.card h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color:white;
+}
+.card p {
+  font-size: 1em;
+  line-height: 1.5;
+}
