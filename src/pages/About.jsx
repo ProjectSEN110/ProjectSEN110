@@ -24,6 +24,7 @@ function About() {
         <img src="/istockphoto-1474109960-612x612.jpg" alt="Behind the Scenes" style={{ width: '250px', borderRadius: '8px' }} />
         <img src="/istockphoto-1494907747-612x612.jpg" alt="Customer Support" style={{ width: '250px', borderRadius: '8px' }} />
         <img src="/istockphoto-1347626326-612x612.jpg" alt="Packaging Team" style={{ width: '250px', borderRadius: '8px' }} />
+        <p>the site encourages to live together with the app for ux welcome</p>
       </div>
       <Footer/>
     </div>
