@@ -1,0 +1,19 @@
+body{
+  background-color: red;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-layout {
+  display: flex;
+}
+
+.content {
+  flex: 1;
+  padding: 1rem;
+  background-color:red;
+  min-height: 100vh;
+}
