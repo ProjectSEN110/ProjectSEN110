@@ -1,7 +1,0 @@
-git init
-git add .
-git commit -m "Course Project"
-git branch -M main
-git remote remove origin
-git remote add origin "https://github.com/ProjectSEN110/ProjectSEN110"
-git push -u origin main 
