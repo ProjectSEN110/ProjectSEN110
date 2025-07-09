@@ -1,0 +1,38 @@
+.App {
+    font-family: sans-serif;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 1rem;
+  }
+  
+  form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color:rgb(175, 14, 14);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: limegreen;
+  }
+  
+  .post {
+    margin-bottom: 20px;
+  }
+  body{
+    background-color: rgb(189, 185, 185);
+  }
+  
