@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+body{
+  align-items: center;
+}
+.tank h1{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  color: greenyellow;
+  text-align: center;
+}
+
+.tank p.quote{
+  text-align: center;
+  font-size: 16px;
+}
+
+.button{
+  text-align: center;
+  color: #282c34;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-left: 45%;
+}
