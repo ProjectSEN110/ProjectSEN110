@@ -1,0 +1,21 @@
+body { background-color: black; color: white; font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+
+.okay { padding: 20px; max-width: 700px; width: 100%; display: flex; flex-direction: column; align-items: center; background-color: #1a1a1a; border-radius: 10px; box-shadow: 0 0 20px rgba(255, 215, 0, 0.2); }
+
+.okay > div:first-child { margin-bottom: 40px; /* Space between available money and rest */ }
+
+.cat { width: 100%; }
+
+.cat > div { margin-bottom: 15px; display: flex; flex-direction: row; justify-content: center; gap: 10px; }
+
+input[type="text"], input[type="number"] { background-color: #b8860b; /* dark goldenrod */ color: white; border: none; padding: 10px; border-radius: 5px; width: 100%; max-width: 300px; }
+
+input::placeholder { color: white; opacity: 0.8; }
+
+button { background-color: #b8860b; /* dark goldenrod */ color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 16px; margin-top: 10px; }
+
+button:hover { background-color: #daa520; /* goldenrod */ }
+
+.mad { margin-top: 40px; display: flex; justify-content: flex-start; width: 100%; }
+
+p { margin-top: 10px; font-size: 16px; text-align: center; }
