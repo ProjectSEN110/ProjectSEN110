@@ -1,78 +1,76 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 
-const questions = [
-  {
-    questionText: 'What is the capital of France?',
-    answerOptions: [
-      { answerText: 'New York', isCorrect: false },
-      { answerText: 'London', isCorrect: false },
-      { answerText: 'Paris', isCorrect: true },
-      { answerText: 'Berlin', isCorrect: false },
-    ],
-  },
- 
-  {
-    questionText: 'What is the largest planet?',
-    answerOptions: [
-      { answerText: 'Earth', isCorrect: false },
-      { answerText: 'Mars', isCorrect: false },
-      { answerText: 'Jupiter', isCorrect: true },
-      { answerText: 'Saturn', isCorrect: false },
-    ],
-  },
-  {
-    questionText: 'What language is used for styling web pages?',
-    answerOptions: [
-      { answerText: 'HTML', isCorrect: false },
-      { answerText: 'JQuery', isCorrect: false },
-      { answerText: 'CSS', isCorrect: true },
-      { answerText: 'XML', isCorrect: false },
-    ],
-  },
-];
-
 function App() {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [score, setScore] = useState(0);
-  const [showScore, setShowScore] = useState(false);
+  const [movies, setMovies] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleAnswerOptionClick = (isCorrect) => {
-    if (isCorrect) {
-      setScore(score + 1);
+  const API_KEY = 'c7a44877'; 
+
+  const searchMovies = async (title) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch(`https://www.omdbapi.com/?s=${title}&apikey=${API_KEY}`);
+      const data = await response.json();
+      
+      if (data.Response === 'True') {
+        setMovies(data.Search);
+      } else {
+        setMovies([]);
+        setError(data.Error || 'No movies found');
+      }
+    } catch (err) {
+      setError('Failed to fetch movies');
+      console.error(err);
+    } finally {
+      setLoading(false);
     }
+  };
 
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
-    } else {
-      setShowScore(true);
+  useEffect(() => {
+    searchMovies('avengers');
+  }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (searchTerm.trim()) {
+      searchMovies(searchTerm);
     }
   };
 
   return (
-    <div className='app'>
-      {showScore ? (
-        <div className='score-section'>
-          You scored {score} out of {questions.length}
-        </div>
-      ) : (
-        <>
-          <div className='question-section'>
-            <div className='question-count'>
-              <span>Question {currentQuestion + 1}</span>/{questions.length}
-            </div>
-            <div className='question-text'>{questions[currentQuestion].questionText}</div>
+    <div className="app">
+      <h1> Tony's Movie Search</h1>
+      <h2> Welcome Back! </h2>
+      
+      <form onSubmit={handleSubmit} className="search-form">
+        <input
+          type="text"
+          placeholder="Search for movies..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <button type="submit">Search</button>
+      </form>
+
+      {loading && <p className="loading">Loading...</p>}
+      {error && <p className="error">{error}</p>}
+
+      <div className="movies">
+        {movies?.map((movie) => (
+          <div key={movie.imdbID} className="movie">
+            <h3>{movie.Title}</h3>
+            <p>{movie.Year}</p>
+            <img 
+              src={movie.Poster !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/300x450?text=No+Poster'} 
+              alt={movie.Title} 
+            />
           </div>
-          <div className='answer-section'>
-            {questions[currentQuestion].answerOptions.map((option, index) => (
-              <button key={index} onClick={() => handleAnswerOptionClick(option.isCorrect)}>
-                {option.answerText}
-              </button>
-            ))}
-          </div>
-        </>
-      )}
+        ))}
+      </div>
     </div>
   );
 }
